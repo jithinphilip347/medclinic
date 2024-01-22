@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Booking from './pages/Booking';
 import Favourite from './pages/Favourite';
+import Profile from './pages/Profile';
+import PrivateRoute from './components/PrivateRoute';
 
 
 export default function App() {
@@ -25,10 +27,12 @@ export default function App() {
     <Route path='/about' element = {<About />} />
     <Route path='/contact' element = {<Contact />} />
     <Route path='/blog' element = {<Blog />} />
+    
     <Route path='/booking' element = {<Booking />} />
     <Route path='/favourite' element = {<Favourite/>} />
-   
-
+    <Route element = {<PrivateRoute/>} >
+    <Route path='/profile' element = {<Profile/>} />
+    </Route>
    </Routes>
    </BrowserRouter>
   )

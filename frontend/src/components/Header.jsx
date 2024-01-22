@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import {  useSelector } from "react-redux";
 
 export default function Header() {
+  const {currentUser} = useSelector(state => state.user)
     return (
       <>
         <div className="bg-cyan-950">
@@ -36,11 +38,13 @@ export default function Header() {
                 <Link to={'/favourite'}>
                 <li>Favourites</li>
                 </Link>
-              <li className=" relative left-40">
-              <Link to={'/signin'}>
-              <span className="">Sign in</span>
-              </Link>   
-              </li>
+                <Link to={'/profile'}>
+                {currentUser ? (
+               <img src={currentUser.avatar} alt="profile" className=" w-10 h-10 rounded-full object-cover" />
+                ):
+                <li className=" relative left-40">Sign in</li> 
+              }
+            </Link>  
             </ul>
           </div>
         </div>

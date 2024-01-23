@@ -40,7 +40,7 @@ export default function Header() {
                 </Link>
                 <Link to={'/profile'}>
                 {currentUser ? (
-               <img src={currentUser.avatar} alt="profile" className=" w-10 h-10 rounded-full object-cover" />
+               <img src={currentUser.avatar} alt="profile" className=" w-10 h-10 rounded-full object-cover relative left-40"/>
                 ):
                 <li className=" relative left-40">Sign in</li> 
               }
